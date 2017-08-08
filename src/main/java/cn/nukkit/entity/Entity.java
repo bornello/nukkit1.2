@@ -1090,12 +1090,11 @@ public abstract class Entity extends Location implements Metadatable {
             }
         }
 
-        if (this.inPortalTicks > 80) {
+        if (this.inPortalTicks == 80) {
             EntityPortalEnterEvent ev = new EntityPortalEnterEvent(this, PortalType.NETHER);
             getServer().getPluginManager().callEvent(ev);
 
             this.setDimension(this.level.getDimension() == Dimension.OVERWORLD ? Dimension.NETHER : Dimension.OVERWORLD);
-            this.inPortalTicks = 0;
         }
 
         this.age += tickDiff;
@@ -1674,6 +1673,8 @@ public abstract class Entity extends Location implements Metadatable {
 
         if (portal) {
             inPortalTicks++;
+        } else {
+            inPortalTicks = 0;
         }
 
         if (vector.lengthSquared() > 0) {

@@ -1283,6 +1283,8 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
 
         if (portal) {
             inPortalTicks++;
+        } else {
+            inPortalTicks = 0;
         }
     }
 
