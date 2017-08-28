@@ -2625,7 +2625,6 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
                             }
 
                             this.craftingType = CRAFTING_SMALL;
-                            f
 
                             PlayerRespawnEvent playerRespawnEvent = new PlayerRespawnEvent(this, this.getSpawn());
                             this.server.getPluginManager().callEvent(playerRespawnEvent);
