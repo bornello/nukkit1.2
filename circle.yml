@@ -1,4 +1,8 @@
 checkout:
+general:
+  branches:
+    only:
+     - 1.2 # list of branches to build
   post:
     - git submodule sync
     - git submodule update --init
